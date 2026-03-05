@@ -15,8 +15,8 @@ jobs:
         image: postgres:15
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: mlapi
+          POSTGRES_PASSWORD: Dhiwi
+          POSTGRES_DB: postgres
         ports:
           - 5432:5432
 
@@ -36,7 +36,7 @@ jobs:
 
     - name: Run pytest
       env:
-        DATABASE_URL: postgresql://postgres:password@localhost:5432/mlapi
+        DATABASE_URL: postgresql://postgres:Dhiwi@localhost:5432/postgres
       run: pytest tests/ -v
 
     - name: Build Docker image
